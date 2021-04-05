@@ -1,0 +1,107 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~ngx-toastr/toastr";
+
+.fieldset-style {
+    border:1px solid #CCC !important;
+    padding:10px;
+    border-radius:7px;
+}
+
+.text-on-pannel {
+    padding: 7px;
+    border: 1px solid #CCC;
+    width: auto !important;
+    border-radius: 7px;
+    border-bottom: 4px solid #CCC;
+    color:#726767;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:18px!important;
+    background:#fff;
+}
+
+.tr-custome{
+    font-size: 0.60rem!important;
+    font-family:Arial, Helvetica, sans-serif;
+    text-transform:uppercase;
+    color: #A9A3B3;
+}
+.icone-custome{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.icone-add-custome{
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+.toast-success {
+    opacity: 1!important;
+    box-shadow: none!important;
+    border-radius: 0px!important;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.toast-warning {
+    opacity: 1!important;
+    box-shadow: none!important;
+    border-radius: 0px!important;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+.toast-error {
+    opacity: 1!important;
+    box-shadow: none!important;
+    border-radius: 0px!important;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.toast-title {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px!important;
+}
+.modal-content{
+    border-radius: 0px;
+}
+/* .modal-holder{ 
+    animation-name: example; 
+    animation-duration: 0.1s; 
+} 
+@keyframes example {
+    0% {transform: scale(0.1)} 
+    100% {transform: scale(1)} 
+} */
+/* @keyframes modal-b-fade {
+    from {
+        opacity: 0; 
+    } to {
+        opacity: 0.5; 
+    } 
+}
+@keyframes modal-fade { 
+    from { 
+        top: -100px; 
+        opacity: 0;
+    } 
+    to { 
+        top: 0;
+        opacity: 1; 
+    }
+} */
+/* .modal-backdrop { 
+    opacity: 0.5; 
+    animation: ease-in-out .5s modal-b-fade; 
+    transition: all .5s ease-in-out; 
+} 
+.modal { 
+    top: -100px; 
+    animation: ease-in-out .5s modal-fade;
+    transition: all .5s ease-in-out; 
+    &.show { 
+        top: 0;
+    } 
+} */
+
+
