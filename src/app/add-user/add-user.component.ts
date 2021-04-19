@@ -8,24 +8,23 @@ import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.css']
+  styleUrls: ['./add-user.component.css'],
 })
 export class AddUserComponent implements OnInit {
-
   users: User[] = [];
   userSubscription: Subscription;
 
-  constructor(private userService: UserService,
-              private toastrService: ToastrService) { }
+  constructor(
+    private userService: UserService,
+    private toastrService: ToastrService
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  insertRecord(form: NgForm){
-
-    this.userService.addUser(form.value).subscribe(res =>{
+  insertRecord(form: NgForm) {
+    this.userService.addUser(form.value).subscribe((res) => {
       console.log('Utilisateur ajouté !');
-      this.toastrService.success('Utilisateur ajouté !','CRUD APP');
+      this.toastrService.success('Utilisateur ajouté !', 'CRUD APP');
       this.userSubscription = this.userService.userSubject.subscribe(
         (users: User[]) => {
           this.users = users;
@@ -33,11 +32,10 @@ export class AddUserComponent implements OnInit {
       );
       this.userService.emitUsers();
       form.resetForm();
-    })
+    });
   }
 
-  onSubmit(form: NgForm){
-      this.insertRecord(form);
+  onSubmit(form: NgForm) {
+    this.insertRecord(form);
   }
-
 }

@@ -1,17 +1,36 @@
 <fieldset class="fieldset-style">
-<legend class="text-on-pannel">Ajout d'utilisateur</legend>
-<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <legend class="text-on-pannel">Ajout d'utilisateur</legend>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="form-group">
-        <label>Nom</label>
-        <input type="text"class="form-control" id="nom" name="nom" ngModel required>
+      <label>Nom</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nom"
+        name="nom"
+        ngModel
+        required
+      />
     </div>
     <div type="text" class="form-group">
-        <label>Prénom</label>
-        <input type="text" class="form-control" id="prenom" name="prenom" ngModel required>
+      <label>Prénom</label>
+      <input
+        type="text"
+        class="form-control"
+        id="prenom"
+        name="prenom"
+        ngModel
+        required
+      />
     </div>
-    <div class="form-group" style="float: right;">
-        <button type="submit" class="btn btn-primary btn-sm" [disabled]="f.invalid">Ajouter</button>
+    <div class="form-group" style="float: right">
+      <button
+        type="submit"
+        class="btn btn-primary btn-sm"
+        [disabled]="f.invalid"
+      >
+        Ajouter
+      </button>
     </div>
-</form>
+  </form>
 </fieldset>
-

@@ -1,55 +1,105 @@
 <fieldset class="fieldset-style">
-<legend class="text-on-pannel">Liste des utilisateurs</legend>
-<div class="card" style="border-radius:7px!important;">
-    <div class="card-body" style="margin-left:-22px!important;margin-right:-22px!important">
-        <div class="content table-responsive table-full-width">
-            <table class="table table-hover table-striped" tyle="font-size: 0.70rem!important;">
-                <thead>
-                    <tr class="tr-custome">
-                        <th style="width: 40%;">Nom</th>
-                        <th style="width: 40%;">Prénom</th>
-                        <th style="width: 10%;"></th>
-                        <th style="width: 10%;"></th>
-                    </tr>
-                </thead>
-                <tbody style="font-size: 13px;">
-                    <tr *ngFor="let user of users">
-                        <td>{{ user.nom }}</td>
-                        <td>{{ user.prenom }}</td>
-                        <td>
-                            <!-- <img src="../../assets/Images/user_edit.png" alt="user_edit" class="icone-custome"> -->
-                            <button type="button" class="btn btn-warning btn-sm" (click)="open(content,user)">Modifier</button>
-                        </td>
-                        <td>
-                            <!-- <img src="../../assets/Images/user_delete.png" alt="user_delete" class="icone-custome"> -->
-                            <button type="button" class="btn btn-danger btn-sm" (click)="onDelete(user.id)">Supprimer</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+  <legend class="text-on-pannel">Liste des utilisateurs</legend>
+  <div class="card" style="border-radius: 7px !important">
+    <div
+      class="card-body"
+      style="margin-left: -22px !important; margin-right: -22px !important"
+    >
+      <div class="content table-responsive table-full-width">
+        <table
+          class="table table-hover table-striped"
+          tyle="font-size: 0.70rem!important;"
+        >
+          <thead>
+            <tr class="tr-custome">
+              <th style="width: 40%">Nom</th>
+              <th style="width: 40%">Prénom</th>
+              <th style="width: 10%"></th>
+              <th style="width: 10%"></th>
+            </tr>
+          </thead>
+          <tbody style="font-size: 13px">
+            <tr *ngFor="let user of users">
+              <td>{{ user.nom }}</td>
+              <td>{{ user.prenom }}</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-warning btn-sm"
+                  (click)="open(content, user)"
+                >
+                  Modifier
+                </button>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-danger btn-sm"
+                  (click)="onDelete(user.id)"
+                >
+                  Supprimer
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-</div>
+  </div>
 </fieldset>
 <ng-template #content let-modal>
-    <div class="modal-header">
-        <h4 class="form-control" id="modal-basic-title" style="border: none;">Modification de l'utilisateur {{ nom }}</h4>
-            <span aria-hidden="true" style="cursor: pointer;" (click)="modal.dismiss('Cross click')">&times;</span>
-    </div>
-    <div class="modal-body">
-        <form #f="ngForm">
-            <div class="form-group">
-                <label>Nom</label>
-                <input type="hidden"  id="id" class="form-control" name="id" [(ngModel)]="id">
-                <input type="text"  id="nom" class="form-control" name="nom" [(ngModel)]="nom" required>
-            </div>
-            <div type="text" class="form-group">
-                <label>Prénom</label>
-                <input type="text" id="prenom" class="form-control" name="prenom" [(ngModel)]="prenom" required>
-            </div>
-            <div class="form-group" style="text-align: right;">
-                <button type="submit" class="btn btn-warning" (click)="onUpdate()" [disabled]="f.invalid" >Modifier</button>
-            </div>
-        </form>
-    </div>
+  <div class="modal-header">
+    <h4 class="form-control" id="modal-basic-title" style="border: none">
+      Modification de l'utilisateur {{ nom }}
+    </h4>
+    <span
+      aria-hidden="true"
+      style="cursor: pointer"
+      (click)="modal.dismiss('Cross click')"
+      >&times;</span
+    >
+  </div>
+  <div class="modal-body">
+    <form #f="ngForm">
+      <div class="form-group">
+        <label>Nom</label>
+        <input
+          type="hidden"
+          id="id"
+          class="form-control"
+          name="id"
+          [(ngModel)]="id"
+        />
+        <input
+          type="text"
+          id="nom"
+          class="form-control"
+          name="nom"
+          [(ngModel)]="nom"
+          required
+        />
+      </div>
+      <div type="text" class="form-group">
+        <label>Prénom</label>
+        <input
+          type="text"
+          id="prenom"
+          class="form-control"
+          name="prenom"
+          [(ngModel)]="prenom"
+          required
+        />
+      </div>
+      <div class="form-group" style="text-align: right">
+        <button
+          type="submit"
+          class="btn btn-warning"
+          (click)="onUpdate()"
+          [disabled]="f.invalid"
+        >
+          Modifier
+        </button>
+      </div>
+    </form>
+  </div>
 </ng-template>
